@@ -1,0 +1,119 @@
+.main-div{
+  top:50%;
+    width:100%;
+    text-align:center;
+}
+
+.mat-form-field {
+  margin-left: 10px;
+  width: 70px;
+  white-space: nowrap;
+}
+/* ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: #49c5b6;
+}
+
+::ng-deep  .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #004b42;
+} */
+td{
+  font-size: medium;
+}
+th{
+  font-size: large;
+}
+button{
+  font-size: large;
+  margin: 16px 8px;
+}
+.star{
+  margin: 0px 0px;
+}
+.spacer {
+  flex: 1 1 auto;
+}
+mat-toolbar {
+  background-image: url("../../assets/Background.jpeg");
+  color: rgb(255, 255, 255);
+  font-size: xx-large;
+
+  display: inline-flex;
+  vertical-align: middle;
+  width: 98%;
+}
+
+.toolbarSpacing {
+  flex: 1 1 auto;
+}
+
+.name{
+  margin: 80px 80px;
+}
+table {
+  width: 100%;
+}
+/* mat card */
+mat-card{
+  background-image: url("../../assets/Background.jpeg");
+  text-align: left;
+  margin-top: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 95%;
+}
+
+mat-card-header{
+  color: aliceblue;
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+  width: 95%;
+}
+
+/* multiTemplateDataRows*/
+tr.example-detail-row {
+  height: 0;
+}
+
+tr.example-element-row:not(.example-expanded-row):hover {
+  background: whitesmoke;
+}
+
+tr.example-element-row:not(.example-expanded-row):active {
+  background: #efefef;
+}
+
+.example-element-row td {
+  border-bottom-width: 0;
+}
+
+.example-element-detail {
+  overflow: hidden;
+  display: flex;
+}
+
+.example-element-diagram {
+  min-width: 80px;
+  border: 2px solid black;
+  padding: 8px;
+  font-weight: lighter;
+  margin: 8px 0;
+  height: 104px;
+}
+
+.example-element-symbol {
+  font-weight: bold;
+  font-size: 40px;
+  line-height: normal;
+}
+
+.example-element-description {
+  padding: 16px;
+}
+
+.example-element-description-attribution {
+  opacity: 0.5;
+}
+
+
+

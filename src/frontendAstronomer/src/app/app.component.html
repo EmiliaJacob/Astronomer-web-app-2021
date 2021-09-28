@@ -1,0 +1,36 @@
+<div class="main-div" role="main">
+  <p>
+    <mat-toolbar>
+      <!--if logged in: load image; else: default profile picture-->
+        <div *ngIf="this.cookie.get('loggedIn') == 'true';then profile_pic; else default"></div>
+
+        <ng-template #profile_pic>
+          <button (click)="user()" mat-button >
+            <div class="profile" [style.background-image]="'url('+this.pic+')'" ></div>
+          </button>
+          <button (click)="logout()" mat-icon-button>
+            <mat-icon>logout</mat-icon>
+          </button>
+        </ng-template>
+
+        <ng-template #default>
+          <button (click)="user()" mat-icon-button>
+            <mat-icon>account_circle</mat-icon>
+          </button>
+        </ng-template>
+
+      <span class="spacer"></span>
+
+      <span class="title" (click)="startpage()">Astronomer</span>
+      <span class="spacer"></span>
+
+      <!--fireball-->
+      <button (click)="fireball()"  mat-icon-button  aria-label="Example icon-button with heart icon">
+        <mat-icon>map</mat-icon>
+      </button>
+    </mat-toolbar>
+  </p>
+
+  <!--tag for router classes-->
+  <router-outlet></router-outlet>
+</div>

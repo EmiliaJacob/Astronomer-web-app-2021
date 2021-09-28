@@ -1,0 +1,28 @@
+
+.login-background{
+  background-image: url("../../assets/Background.jpeg");
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: left;
+  width: 95%;
+}
+
+.mat-card{
+  margin:0 auto;
+  display:inline-block;
+  vertical-align: left;
+}
+
+.login-from-field{
+  width: 100%;
+}
+
+.login-form {
+  min-width: 150px;
+  max-width: 300px;
+  width: 100%;
+}
+
+p:hover{
+  text-decoration: underline;
+}

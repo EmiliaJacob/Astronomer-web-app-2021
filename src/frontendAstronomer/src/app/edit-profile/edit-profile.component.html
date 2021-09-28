@@ -1,0 +1,52 @@
+<h3>Upload a profile picture</h3>
+
+<!--file selector-->
+<input type="file" class="file-input"
+      (change)="onFileSelected($event)" #fileUpload>
+
+<div class="file-upload">
+
+  {{fileName || "No file uploaded yet."}}
+
+  <button mat-mini-fab color="primary" class="upload-btn"
+    (click)="fileUpload.click()">
+    <mat-icon>attach_file</mat-icon>
+  </button>
+
+  <br>
+
+  <img *ngIf="image != ''" src={{image}}>
+
+</div>
+
+<h3>Change the display settings</h3>
+<form>
+  <!-- mat-optionc nicht mit schleife durchlaufen, da sonst der default Wert aus der Datenbank nicht gesetzt wird-->
+  <mat-form-field class="sortedby" appearance="fill">
+    <mat-label>Default sorting attribute: </mat-label>
+    <mat-select [(value)]="sorted">
+      <mat-option value="name">Name</mat-option>
+      <mat-option value="distance">Distance</mat-option>
+      <mat-option value="diameter">Diameter</mat-option>
+      <mat-option value="date">Date</mat-option>
+      <mat-option value="favortie">Favortie</mat-option>
+
+    </mat-select>
+  </mat-form-field>
+
+  <mat-divider></mat-divider>
+
+  <!-- mat-options nicht mit schleife durchlaufen, da sonst der default Wert aus der Datenbank nicht gesetzt wird-->
+  <mat-form-field class="sortedby" appearance="fill">
+    <mat-label>Measurement system:</mat-label>
+    <mat-select [(value)]="unit_table" >
+      <mat-option value="metric">metric</mat-option>
+      <mat-option value="miles">miles</mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+
+<mat-card-actions>
+  <button mat-raised-button (click)="backToProfile()">cancel</button>
+  <button mat-raised-button color="primary" (click)="update()">update</button>
+</mat-card-actions>

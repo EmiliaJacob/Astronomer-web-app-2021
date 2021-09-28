@@ -1,0 +1,9 @@
+-The Main.JPG shows the main page of our website with all the astroids that have a close approach date of the 01.07.2021.
+-The Main_with_extra_Informations.JPG shows the main page with the same information as the Main.JPG but with extra informations for one asteroid.
+-The Main_with_saved_asteroids.JPG shows the main page with the same informations as the Main.JPG but with two saved asteroids that the user has saved.
+-The Login.JPG shows Login mask for our website.
+-The Profile.JPG shows the profile of the user that is login.
+-The Profile_edit.JPG shows the options that the user can make. He can change the default sorting attribute and the default measurement system.
+-The Register.JPG shows the register mask for our website were a new user can register itself with a unique username a email and a password.
+-The Fireball.JPF shows the fireball page with some information what you can see on the fireballmap.
+-The Fireballmap.JPG shows you the fireballmap with the positions were asteroids burned up in the atmosphere.         

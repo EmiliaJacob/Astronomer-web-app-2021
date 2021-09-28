@@ -1,0 +1,23 @@
+
+.register-background{
+  background-image: url("../../assets/Background.jpeg");
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: left;
+  width: 95%;
+}
+.register-card{
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: left;
+}
+
+.register-from-field{
+  width: 100%;
+}
+
+.register-form {
+  min-width: 150px;
+  max-width: 300px;
+  width: 100%;
+}

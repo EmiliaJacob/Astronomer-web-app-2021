@@ -1,0 +1,43 @@
+
+  <mat-card class="login-background">
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Login</mat-card-title>
+    </mat-card-header>
+    <form class="login-form">
+
+
+      <mat-form-field  appearance="fill" class="login-from-field">
+        <mat-label>Type your username here</mat-label>
+        <input  name='userName' [(ngModel)]="userName" matInput placeholder="Username">
+        <mat-hint>Username*</mat-hint>
+      </mat-form-field>
+
+      <div *ngIf="passwordCheck == true;then grey_text; else red_text"></div>
+      <ng-template #grey_text >
+        <mat-form-field appearance="fill" class="login-from-field">
+        <mat-label>Type your Password here</mat-label>
+        <input name='userPassword' [(ngModel)]="userPassword" matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        </button>
+          <mat-hint>Password*</mat-hint>
+        </mat-form-field>
+      </ng-template>
+      <ng-template #red_text>
+        <mat-form-field appearance="fill" class="login-from-field">
+          <mat-label>Type your Password here</mat-label>
+          <input name='userPassword' [(ngModel)]="userPassword" matInput [type]="hide ? 'password' : 'text'">
+          <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+          </button>
+            <mat-hint style="color: red;">Wrong password! Try again*</mat-hint>
+          </mat-form-field>
+      </ng-template>
+
+      <button (click)='login()' mat-raised-button color="primary">Login</button>
+      <br>
+      <p (click)="register()">Don't have an Account? register</p>
+    </form>
+  </mat-card>
+  </mat-card>
+
+

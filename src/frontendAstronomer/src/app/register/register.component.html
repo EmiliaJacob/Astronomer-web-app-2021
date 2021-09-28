@@ -1,0 +1,50 @@
+
+<mat-card class="register-background">
+  <mat-card class="register-card">
+    <mat-card-header>
+      <mat-card-title>Register</mat-card-title>
+    </mat-card-header>
+    <form class="register-form">
+
+      <!--If username already exists: red text, else: grey text -->
+    <div *ngIf="user_exists == false;then grey_text; else red_text"></div>
+    <ng-template #grey_text >
+      <mat-form-field  appearance="fill" class="register-from-field">
+        <mat-label>Type your username here</mat-label>
+        <input  name='userName' [(ngModel)]="userName" matInput placeholder="Username">
+        <mat-hint>Username*</mat-hint>
+      </mat-form-field>
+    </ng-template>
+
+    <ng-template #red_text>
+      <mat-form-field  appearance="fill" class="register-from-field">
+        <mat-label>Type your username here</mat-label>
+        <input  name='userName' [(ngModel)]="userName" matInput placeholder="Username">
+        <mat-hint style="color: red;">Username already exists!*</mat-hint>
+      </mat-form-field>
+    </ng-template>
+
+
+    <!--E-Mail-->
+      <mat-form-field appearance="fill" class="register-from-field">
+        <mat-label>Type your E-Mail here</mat-label>
+        <input name='userEmail' [(ngModel)]="userEmail" matInput placeholder="E-mail">
+        <mat-hint>E-Mail*</mat-hint>
+      </mat-form-field>
+
+    <!--password-->
+      <mat-form-field appearance="fill" class="register-from-field">
+        <mat-label>Type your Password here</mat-label>
+        <input name='userPassword' [(ngModel)]="userPassword" matInput [type]="hide ? 'password' : 'text'">
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        </button>
+        <mat-hint>Password*</mat-hint>
+      </mat-form-field>
+
+
+      <button (click)='post_user()' mat-raised-button color="primary">Register</button>
+    </form>
+  </mat-card>
+</mat-card>
+
+

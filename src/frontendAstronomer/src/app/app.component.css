@@ -1,0 +1,32 @@
+.main-div{
+  top:50%;
+    width:100%;
+    text-align: center;
+    margin-bottom: 10px;
+
+}
+
+mat-toolbar {
+  background-image: url("../../src/assets/Background.jpeg");
+  color: rgb(255, 255, 255);
+  font-size:xx-large;
+  margin: 0 auto;
+  display: inline-flex;
+  vertical-align: middle;
+  width: 98%;
+}
+
+.title {
+  cursor: pointer;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+.profile {
+  background-size: cover;
+  background-position: center;
+  height: 30px;
+  width: 40px;
+}

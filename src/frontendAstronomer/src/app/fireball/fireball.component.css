@@ -1,0 +1,19 @@
+mat-card{
+  background-image: url("../../assets/Background.jpeg");
+
+  text-align: left;
+  margin-top: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  width: 95%;
+  color: aliceblue;
+}
+
+mat-card-header{
+  color: aliceblue;
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+  width: 95%;
+  font-size: x-large;
+}

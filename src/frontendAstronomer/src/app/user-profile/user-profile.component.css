@@ -1,0 +1,34 @@
+
+
+.profile-background{
+  background-image: url("../../assets/Background.jpeg");
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: left;
+  width: 95%;
+}
+.profile-card{
+  margin: 50px auto;
+  display: inline-block;
+  vertical-align: left;
+}
+
+.profile-item{
+  width: 100%;
+}
+mat-divider{
+  padding: 60px;
+}
+
+.user_show{
+  margin: auto;
+  font-size: medium;
+
+}
+
+.sortedby{
+  margin: 10, 10, 10, 10;
+  width: 60%;
+}
+
+

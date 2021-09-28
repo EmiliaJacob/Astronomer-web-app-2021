@@ -1,0 +1,97 @@
+<!--Saved Asteroids Table-->
+<mat-card>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        Saved Asteroids
+      </mat-panel-title>
+    </mat-expansion-panel-header>
+    <!--Show Bookmarks only when user is logged in-->
+    <div *ngIf="isLoggedIn() == true; then show_table; else show_text"></div>
+    <ng-template #show_table>
+      <table mat-table [dataSource]="dataSourceSavedAsteroids" multiTemplateDataRows matSort class="mat-evelation-z8" >
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+          <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+        </ng-container>
+        <!-- distance Column -->
+        <ng-container matColumnDef="distance">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Distance </th>
+          <td mat-cell *matCellDef="let element"> {{element.distance}} </td>
+        </ng-container>
+        <!-- Diameter Column -->
+        <ng-container matColumnDef="diameter">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Diameter </th>
+          <td mat-cell *matCellDef="let element">
+            {{element.diameter}}<!-- <mat-icon id="icon" style="font-size: 10;" >album</mat-icon> --></td>
+        </ng-container>
+        <!-- date Column -->
+        <ng-container matColumnDef="date">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Date/Time </th>
+          <td mat-cell *matCellDef="let element"> {{element.date}} </td>
+        </ng-container>
+        <!-- Link for jbl-website -->
+        <ng-container matColumnDef="link">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Link </th>
+          <td mat-cell *matCellDef="let element">
+            <button class="star"  (click)="details(element.link)" mat-button >
+              info
+            </button> </td>
+        </ng-container>
+        <!-- favorite column  -->
+        <ng-container matColumnDef="favorite">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Favorite </th>
+          <td mat-cell *matCellDef="let element" class="button">
+            <div *ngIf="element.is_favorite == false;then border_star; else fill_star">
+            </div>
+              <ng-template #border_star>
+                <button  (click)="favorite(element)" mat-button >
+                <mat-icon >star_border</mat-icon>
+                </button>
+              </ng-template>
+              <ng-template #fill_star>
+                <button  (click)="favorite(element)" mat-button >
+                  <mat-icon >star</mat-icon>
+                </button>
+              </ng-template>
+          </td>
+        </ng-container>
+
+        <!-- expanded Details  -->
+        <ng-container matColumnDef="expandedDetail">
+          <td mat-cell *matCellDef="let element" [attr.colspan]="displayedColumnsSavedAsteroids.length">
+            <div class="example-element-detail"
+                [@detailExpand]="element == expandedElementSavedAsteroids ? 'expanded' : 'collapsed'">
+              <div class="example-element-description">
+                  <p> Id: {{element.details.id}} </p>
+                  <p> potentially hazardous: {{element.details.potentially_hazardous}} </p>
+                  <p> close approach date: {{element.details.close_approach_date}} </p>
+                  <p> relative_velocity: {{element.details.relative_velocity}} </p>
+                  <p> miss_distance: {{element.details.miss_distance}} </p>
+                  <p> is_sentry_object: {{element.details.is_sentry_object}} </p>
+                  <div *ngIf="element.details.orbit_class != ''">
+                    <p> orbit_class: {{element.details.orbit_class}}</p>
+                  </div>
+              </div>
+            </div>
+          </td>
+        </ng-container>
+
+        <!-- table definitions  -->
+        <tr mat-header-row *matHeaderRowDef="displayedColumnsSavedAsteroids"></tr>
+        <tr mat-row *matRowDef="let element; columns: displayedColumnsSavedAsteroids"
+            class="example-element-row"
+            [class.example-expanded-row]="expandedElementSavedAsteroids === element"
+            (click)="expandedElementSavedAsteroids = expandedElementSavedAsteroids === element ? null : element">
+        </tr>
+        <tr mat-row *matRowDef="let row; columns: ['expandedDetail']" class="example-detail-row"></tr>
+      </table>
+    </ng-template>
+    <ng-template #show_text>
+      <p style="color: aliceblue;"> You're not logged in.</p>
+    </ng-template>
+  </mat-expansion-panel>
+</mat-card>
+
